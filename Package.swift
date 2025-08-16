@@ -22,22 +22,28 @@ let package = Package(
   products: [
     .library(
       name: "InMobiAdapterTarget",
-      targets: ["InMobiAdapterTarget"]
+      targets: ["InMobiAdapterTarget", "InMobi-iOS-SDK"]
     )
   ],
   targets: [
     .target(
       name: "InMobiAdapterTarget",
       dependencies: [
-        .target(name: "Adapter"),
+        .target(name: "InMobiAdapter"),
       ],
       path: "InMobiAdapterTarget"
     ),
     .binaryTarget(
-      name: "Adapter",
+      name: "InMobiAdapter",
       url:
         "https://dl.google.com/googleadmobadssdk/mediation/ios/inmobi/InMobiAdapter-10.8.6.0.zip",
-      checksum: ""
+      checksum: "3dcd1c6b2bc8ab0267642d3e9cc64be6f1cb8b353b64742effd56211d26d0450"
+    ),
+    .binaryTarget(
+      name: "InMobi-iOS-SDK",
+      url:
+        "https://dl.inmobi.com/inmobi-sdk/IM/InMobi-iOS-SDK-10.8.6.zip",
+      checksum: "ab0f05cd8aa0a7b1085a2b4f57f06ba27ae5dc310e1d9c1241011bba6ba98949"
     ),
   ]
 )
